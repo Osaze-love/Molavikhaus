@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -35,7 +36,13 @@ const residences = [
 const Residences = () => {
 	return (
 		<div className="w-full bg-[#a4703f] px-4 lg:px-0 py-10 lg:py-20">
-			<section className="w-full flex flex-col items-center justify-center space-y-2 lg:space-y-4">
+			<motion.section
+				className="w-full flex flex-col items-center justify-center space-y-2 lg:space-y-4"
+				initial={{ opacity: 0, y: 24 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.3 }}
+				transition={{ duration: 0.6, ease: "easeOut" }}
+			>
 				<h2 className="text-lg lg:text-5xl text-white font-medium  items-center justify-center">
 					Choose Your Room
 				</h2>
@@ -43,8 +50,14 @@ const Residences = () => {
 					Explore a variety of rooms tailored for your needs. Whether you're
 					travelling solo or with family, we have a room that's perfect for you.
 				</p>
-			</section>
-			<section className="w-full mt-12 hidden lg:block">
+			</motion.section>
+			<motion.section
+				className="w-full mt-12 hidden lg:block"
+				initial={{ opacity: 0, y: 30 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.2 }}
+				transition={{ duration: 0.7, ease: "easeOut" }}
+			>
 				<Swiper
 					spaceBetween={20}
 					slidesPerView={3}
@@ -81,9 +94,15 @@ const Residences = () => {
 						</SwiperSlide>
 					))}
 				</Swiper>
-			</section>
+			</motion.section>
 
-			<section className="w-full mt-6 lg:mt-12 block lg:hidden">
+			<motion.section
+				className="w-full mt-6 lg:mt-12 block lg:hidden"
+				initial={{ opacity: 0, y: 30 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.2 }}
+				transition={{ duration: 0.7, ease: "easeOut" }}
+			>
 				<Swiper
 					spaceBetween={20}
 					slidesPerView={1}
@@ -120,13 +139,19 @@ const Residences = () => {
 						</SwiperSlide>
 					))}
 				</Swiper>
-			</section>
+			</motion.section>
 
-			<section className="flex items-center justify-center mt-6 lg:mt-[50px]">
+			<motion.section
+				className="flex items-center justify-center mt-6 lg:mt-[50px]"
+				initial={{ opacity: 0, y: 18 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.2 }}
+				transition={{ duration: 0.5, ease: "easeOut" }}
+			>
 				<button className="px-6 py-2 bg-[none] border border-white text-white rounded-md w-max text-center text-xs lg:text-base font-semibold mx-auto  transition-all duration-300 active:scale-90">
 					Explore Suites
 				</button>
-			</section>
+			</motion.section>
 		</div>
 	);
 };

@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
@@ -6,7 +9,13 @@ const Conferences = () => {
 	return (
 		<div className="w-full px-4 lg:px-10 py-10 lg:py-10">
 			<section className="flex flex-col lg:flex-row justify-between space-x-6">
-				<section className="w-full lg:w-1/2 flex flex-col space-y-4 mt-[0px] lg:mt-[130px]">
+				<motion.section
+					className="w-full lg:w-1/2 flex flex-col space-y-4 mt-[0px] lg:mt-[130px]"
+					initial={{ opacity: 0, y: 26 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.25 }}
+					transition={{ duration: 0.65, ease: "easeOut" }}
+				>
 					<h2 className="text-lg lg:text-5xl font-semibold tracking-normal lg:tracking-wide w-full lg:w-5/6">
 						Conferences & Meetings for large, medium and smaller events
 					</h2>
@@ -27,8 +36,14 @@ const Conferences = () => {
 						<p className="">Book Now </p>
 						<ChevronRight height={20} width={20} className="text-white" />
 					</div>
-				</section>
-				<section className="hidden lg:flex w-full lg:w-1/2 rounded-lg space-x-0 lg:space-x-4">
+				</motion.section>
+				<motion.section
+					className="hidden lg:flex w-full lg:w-1/2 rounded-lg space-x-0 lg:space-x-4"
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.2 }}
+					transition={{ duration: 0.7, ease: "easeOut" }}
+				>
 					<div className="flex flex-col space-y-0 lg:space-y-4 mt-[70px] w-full">
 						<div className="h-[200px] lg:h-[300px] w-[150px] lg:w-[300px] relative rounded-lg overflow-hidden">
 							<Image
@@ -65,7 +80,7 @@ const Conferences = () => {
 							/>
 						</div>
 					</div>
-				</section>
+				</motion.section>
 			</section>
 		</div>
 	);

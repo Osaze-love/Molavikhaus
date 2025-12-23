@@ -1,10 +1,19 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Calendar, ChevronDown, User, Warehouse } from "lucide-react";
 import React from "react";
 
 const QuickBook = () => {
 	return (
 		<div className="hidden lg:block w-full px-10 py-10 mt-[-100px]">
-			<section className="border shadow-lg border-gray-200 rounded-lg p-8 flex items-center z-10 relative bg-white">
+			<motion.section
+				className="border shadow-lg border-gray-200 rounded-lg p-8 flex items-center z-10 relative bg-white"
+				initial={{ opacity: 0, y: 24 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.2 }}
+				transition={{ duration: 0.6, ease: "easeOut" }}
+			>
 				<section className="w-1/5 flex justify-between px-3 items-center border-r border-r-black">
 					<div className="flex items-center gap-2">
 						<div className="w-[30px] h-[30px] bg-[#f2e1d1] rounded-full flex items-center justify-center">
@@ -63,7 +72,7 @@ const QuickBook = () => {
 						Check Availability
 					</button>
 				</section>
-			</section>
+			</motion.section>
 		</div>
 	);
 };

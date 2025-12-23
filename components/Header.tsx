@@ -2,12 +2,14 @@
 
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState, useRef, useEffect } from "react";
 
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const menuRef = useRef<HTMLDivElement>(null);
 	const headerRef = useRef<HTMLDivElement>(null);
+	const pathname = usePathname();
 
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
@@ -38,6 +40,11 @@ const Header = () => {
 		};
 	}, [isMenuOpen]);
 
+	const linkClass = (path: string) =>
+		`text-sm font-medium transition-all duration-300 ${
+			pathname === path ? "text-[#7B542F]" : "hover:text-[#7B542F]"
+		}`;
+
 	return (
 		<>
 			<div
@@ -51,19 +58,19 @@ const Header = () => {
 					<div className="hidden lg:flex items-center gap-8">
 						<Link
 							href="/"
-							className="text-sm hover:text-[#7B542F] font-medium transition-all duration-300 "
+							className={linkClass("/")}
 						>
 							Home
 						</Link>
 						<Link
-							href="/"
-							className="text-sm hover:text-[#7B542F] font-medium transition-all duration-300 "
+							href="/about"
+							className={linkClass("/about")}
 						>
 							About
 						</Link>
 						<Link
-							href="/"
-							className="text-sm hover:text-[#7B542F] font-medium transition-all duration-300 "
+							href="/contact"
+							className={linkClass("/contact")}
 						>
 							Contact
 						</Link>
@@ -98,21 +105,31 @@ const Header = () => {
 								<Link
 									href="/"
 									onClick={closeMenu}
-									className="text-xs font-medium hover:text-[#7B542F] transition-colors duration-300 py-2"
+									className={`text-xs font-medium transition-colors duration-300 py-2 ${
+										pathname === "/" ? "text-[#7B542F]" : "hover:text-[#7B542F]"
+									}`}
 								>
 									Home
 								</Link>
 								<Link
-									href="/"
+									href="/about"
 									onClick={closeMenu}
-									className="text-xs font-medium hover:text-[#7B542F] transition-colors duration-300 py-2"
+									className={`text-xs font-medium transition-colors duration-300 py-2 ${
+										pathname === "/about"
+											? "text-[#7B542F]"
+											: "hover:text-[#7B542F]"
+									}`}
 								>
 									About
 								</Link>
 								<Link
-									href="/"
+									href="/contact"
 									onClick={closeMenu}
-									className="text-xs font-medium hover:text-[#7B542F] transition-colors duration-300 py-2"
+									className={`text-xs font-medium transition-colors duration-300 py-2 ${
+										pathname === "/contact"
+											? "text-[#7B542F]"
+											: "hover:text-[#7B542F]"
+									}`}
 								>
 									Contact
 								</Link>

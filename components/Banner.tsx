@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import React from "react";
 import Typewriter from "./Typewriter";
 import { Calendar, ChevronDown, User, Warehouse } from "lucide-react";
@@ -8,7 +11,12 @@ const Banner = () => {
 			className="flex min-h-[60vh] lg:min-h-[90vh] bg-cover bg-center bg-no-repeat flex-col items-start lg:items-center justify-start lg:justify-center p-4 lg:p-24 bg-blend-overlay bg-black/70"
 			style={{ backgroundImage: "url('/images/bg_image.jpg')" }}
 		>
-			<div className="z-10 max-w-5xl w-full items-start lg:items-center justify-start lg:justify-between text-sm flex flex-col gap-1 lg:gap-6 ">
+			<motion.div
+				className="z-10 max-w-5xl w-full items-start lg:items-center justify-start lg:justify-between text-sm flex flex-col gap-1 lg:gap-6 "
+				initial={{ opacity: 0, y: 30 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.7, ease: "easeOut" }}
+			>
 				<h1 className=" text-3xl lg:text-6xl text-white tracking-widest font-bold text-left lg:text-center w-full lg:w-2/4 mx-0 lg:mx-auto mt-6 lg:mt-0">
 					MOLAVIK HAUS{" "}
 					<span className=" lg:inline-block hidden">
@@ -107,7 +115,7 @@ const Banner = () => {
 						</button>
 					</section>
 				</section>
-			</div>
+			</motion.div>
 		</main>
 	);
 };

@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Quote, Star } from "lucide-react";
 import Image from "next/image";
 import React from "react";
@@ -6,7 +9,15 @@ import Marquee from "react-fast-marquee";
 const Testimonials = () => {
 	return (
 		<div className="w-full px-4 lg:px-10 py-20 lg:py-40">
-			<h2 className="text-xl lg:text-5xl font-medium text-center">Happy Clients</h2>
+			<motion.h2
+				className="text-xl lg:text-5xl font-medium text-center"
+				initial={{ opacity: 0, y: 20 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.3 }}
+				transition={{ duration: 0.6, ease: "easeOut" }}
+			>
+				Happy Clients
+			</motion.h2>
 			<div className="hidden lg:block">
 				<Marquee
 					className="mt-10 lg:mt-20"

@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 
@@ -43,14 +46,24 @@ const suites = [
 const Suites = () => {
 	return (
 		<div className="w-full px-4 lg:px-20 ">
-			<h2 className="text-xl lg:text-5xl font-medium text-center ">
+			<motion.h2
+				className="text-xl lg:text-5xl font-medium text-center "
+				initial={{ opacity: 0, y: 20 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.3 }}
+				transition={{ duration: 0.6, ease: "easeOut" }}
+			>
 				Residences & Suites
-			</h2>
+			</motion.h2>
 			<section className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-10 mt-8 lg:mt-20">
 				{suites.map((suite, index) => (
-					<div
+					<motion.div
 						key={index}
 						className="flex flex-col gap-4 border cursor-pointer hover:shadow-lg hover:shadow-[#7B542F] lg:hover:scale-105 transition-all duration-300 border-gray-200 rounded-lg "
+						initial={{ opacity: 0, y: 28 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true, amount: 0.2 }}
+						transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.05 }}
 					>
 						<div className="h-[200px] lg:h-[250px] w-full lg:w-[400px] relative rounded-tr-lg rounded-tl-lg overflow-hidden">
 							<Image
@@ -86,7 +99,7 @@ const Suites = () => {
 								Book Reservation
 							</button>
 						</div>
-					</div>
+					</motion.div>
 				))}
 			</section>
 		</div>
