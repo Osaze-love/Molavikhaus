@@ -29,8 +29,9 @@ const ContactPage = () => {
 						Here to plan, host, and guide your stay.
 					</h1>
 					<p className="text-sm lg:text-base text-white/85 max-w-2xl leading-relaxed">
-						Reach out for reservations, private events, or bespoke experiences.
-						Our team responds quickly and tailors support to what you need.
+						Reach out for reservations, private events, or bespoke
+						experiences. Our team responds quickly and tailors support to what
+						you need.
 					</p>
 					<div className="flex flex-wrap gap-3">
 						<button className="px-5 py-2.5 bg-[#7B542F] text-white rounded-md text-sm font-medium hover:bg-[#7B542F]/90 transition-all duration-300 active:scale-95">
@@ -74,7 +75,7 @@ const ContactPage = () => {
 							body: "Check-in 2pm · Check-out 11am",
 							foot: "Early requests on availability",
 						},
-					].map((item) => (
+					].map(item => (
 						<div
 							key={item.title}
 							className="border border-gray-200 rounded-lg p-5 shadow-sm hover:shadow-md transition-all duration-300 bg-white"
@@ -91,7 +92,10 @@ const ContactPage = () => {
 				</div>
 			</motion.section>
 
-			<motion.section className="px-4 lg:px-16 py-16 lg:py-28 bg-[#f8f0e8]" {...fade}>
+			<motion.section
+				className="px-4 lg:px-16 py-16 lg:py-28 bg-[#f8f0e8]"
+				{...fade}
+			>
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 					<div className="space-y-3">
 						<p className="text-[#7B542F] text-xs font-semibold tracking-wide uppercase">
@@ -101,9 +105,9 @@ const ContactPage = () => {
 							In the heart of Victoria Island.
 						</h2>
 						<p className="text-sm lg:text-base text-gray-700 leading-relaxed">
-							Moments from the business district, art galleries, and waterfront
-							experiences. Tell us when you arrive, and we’ll arrange pickups,
-							dining, or guided outings.
+							Moments from the business district, art galleries, and
+							waterfront experiences. Tell us when you arrive, and we’ll
+							arrange pickups, dining, or guided outings.
 						</p>
 						<div className="flex flex-wrap gap-3">
 							<button className="px-5 py-2.5 bg-black text-white rounded-md text-sm font-semibold hover:bg-black/90 transition-all duration-300 active:scale-95">
@@ -114,7 +118,8 @@ const ContactPage = () => {
 							</button>
 						</div>
 					</div>
-					<div className="h-[260px] lg:h-[320px] rounded-xl overflow-hidden shadow-md border border-[#e8d8c8] bg-cover bg-center"
+					<div
+						className="h-[260px] lg:h-[320px] rounded-xl overflow-hidden shadow-md border border-[#e8d8c8] bg-cover bg-center"
 						style={{ backgroundImage: "url('/images/hotel2.jpg')" }}
 					/>
 				</div>
@@ -135,12 +140,18 @@ const ContactPage = () => {
 						</p>
 						<div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
 							<div className="border border-gray-200 rounded-lg p-4">
-								<p className="font-semibold text-gray-900">Response Time</p>
-								<p className="text-xs text-gray-600 mt-1">Under 4 hours</p>
+								<p className="font-semibold text-gray-900">
+									Response Time
+								</p>
+								<p className="text-xs text-gray-600 mt-1">
+									Under 4 hours
+								</p>
 							</div>
 							<div className="border border-gray-200 rounded-lg p-4">
 								<p className="font-semibold text-gray-900">Support</p>
-								<p className="text-xs text-gray-600 mt-1">Concierge + Events</p>
+								<p className="text-xs text-gray-600 mt-1">
+									Concierge + Events
+								</p>
 							</div>
 						</div>
 					</div>
@@ -208,7 +219,10 @@ const ContactPage = () => {
 				</div>
 			</motion.section>
 
-			<motion.section className="px-4 lg:px-16 py-16 lg:py-28 bg-[#0f0f0f] text-white" {...fade}>
+			<motion.section
+				className="px-4 lg:px-16 py-16 lg:py-28 bg-[#0f0f0f] text-white"
+				{...fade}
+			>
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
 					<div className="space-y-3 lg:col-span-1">
 						<p className="text-[#f2e1d1] text-xs uppercase tracking-[0.2em]">
@@ -259,8 +273,8 @@ const ContactPage = () => {
 						Prefer WhatsApp? We’ll respond quickly.
 					</h2>
 					<p className="text-sm lg:text-base text-gray-700 max-w-3xl mx-auto leading-relaxed">
-						Chat for room preferences, special occasions, or corporate rates. We’ll
-						share next steps and confirm details in minutes.
+						Chat for room preferences, special occasions, or corporate rates.
+						We’ll share next steps and confirm details in minutes.
 					</p>
 					<div className="flex flex-wrap gap-3 justify-center">
 						<button className="px-6 py-2.5 bg-[#25D366] text-white rounded-md text-sm font-semibold hover:bg-[#20b65a] transition-all duration-300 active:scale-95">
@@ -277,4 +291,3 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-
